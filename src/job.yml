@@ -1,15 +1,15 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
 command: >-
-  python 
-  --
-  --
+  python train.py
+  --training_data $AZUREML_DATAREFERENCE_training_data
+  --reg_rate 0.01
 inputs:
   training_data: 
     type: uri_folder 
-    path: 
+    path: azureml://subscriptions/6fb72ffc-7f88-4642-9b67-9db6a5dfa43a/resourcegroups/final-tutorial/workspaces/final-tutorial-mlw/datastores/workspaceblobstore/paths/LocalUpload/534e63694838be564a42c83cb065f8fd/data/
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+compute:  tutorial-cluster
+experiment_name: job-deployment-v0
+description: My first attempt at deploying a train job from the cli lol
