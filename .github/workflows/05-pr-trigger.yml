@@ -6,6 +6,8 @@ on:
       - main
 
 jobs:
-  steps:
+  build:  # This is the job ID
+    runs-on: ubuntu-latest  # This specifies the type of runner that the job will run on
+    steps:
       - name: Placeholder
         run: echo "Will add code checks here in next challenge"
