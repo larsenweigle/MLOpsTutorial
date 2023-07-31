@@ -2,12 +2,10 @@ name: Triggered on pull request to main
 
 on:
   pull_request:
-    # Sequence of patterns matched against refs/heads
     branches:    
       - main
 
 jobs:
   steps:
       - name: Placeholder
-        run: |
-          echo "Will add code checks here in next challenge"
+        run: echo "Will add code checks here in next challenge"
