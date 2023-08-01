@@ -7,9 +7,9 @@ command: >-
 inputs:
   training_data: 
     type: uri_folder 
-    path: azureml://subscriptions/6fb72ffc-7f88-4642-9b67-9db6a5dfa43a/resourcegroups/final-tutorial/workspaces/final-tutorial-mlw/datastores/workspaceblobstore/paths/LocalUpload/534e63694838be564a42c83cb065f8fd/data/
+    path: azureml://subscriptions/6fb72ffc-7f88-4642-9b67-9db6a5dfa43a/resourcegroups/final-tutorial/workspaces/final-tutorial-mlw/datastores/workspaceblobstore/paths/LocalUpload/ff469ba855467299203a8f860ea1bd33/data/
   reg_rate: 0.01
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
 compute:  tutorial-cluster
-experiment_name: job-deployment-experiment
-description: My first attempt at deploying a train job from the cli lol
+experiment_name: job-deployment-production
+description: Job to train the model on production code!
