@@ -24,4 +24,4 @@ jobs:
       - name: Deploy model to endpoint
         run: |
           az ml online-endpoint create --name tutorial-endpoint -f src/endpoint.yml --resource-group final-tutorial --workspace-name final-tutorial-mlw
-          az ml online-deployment create --name tutorial-deployment --endpoint tutorial-endpoint -f src/deployment.yml --all-traffic 
+          az ml online-deployment create --name tutorial-deployment --endpoint tutorial-endpoint -f src/deployment.yml --all-traffic --resource-group final-tutorial --workspace-name final-tutorial-mlw
