@@ -23,5 +23,5 @@ jobs:
 
       - name: Deploy model to endpoint
         run: |
-          VERSION=$(az ml model show --name final-tutorial-model --workspace-name final-tutorial-mlw --query 'latest.version' -o tsv)
-          az ml endpoint create --name final-tutorial-endpoint --type aks --model final-tutorial-model:$VERSION --workspace-name final-tutorial-mlw --resource-group final-tutorial
+          az ml online-endpoint create --name tutorial-endpoint -f src/endpoints.yml --resource-group final-tutorial --workspace-name final-tutorial-mlw
+          az ml online-deployment create --name tutorial-deployment --endpoint tutorial-endpoint -f src/deployment.yml --all-traffic 

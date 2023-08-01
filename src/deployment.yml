@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: tutorial-deployment
+endpoint_name: tutorial-endpoint
+model:
+  name: final-tutorial-model
+  version: 1
+  path: azureml://locations/eastus/workspaces/77574a10-bebf-471d-8b9f-3ec30727ccf1/models/final-tutorial-model/versions/1
+  type: mlflow_model
+instance_type: Standard_DS3_v2
+instance_count: 1
