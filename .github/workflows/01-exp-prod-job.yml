@@ -12,13 +12,14 @@ jobs:
       name: development
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
+      - name: Check out repo
+        uses: actions/checkout@main
+      - name: Install az ml extension
+        run: az extension add -n ml -y
       - name: Azure login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{secrets.AZURE_CREDENTIALS}}
           
       # Setup and run your experiment job here
       - name: Run experiment job
@@ -32,13 +33,14 @@ jobs:
       # url: ${{ secrets.PRODUCTION_URL }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
+      - name: Check out repo
+        uses: actions/checkout@main
+      - name: Install az ml extension
+        run: az extension add -n ml -y
       - name: Azure login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{secrets.AZURE_CREDENTIALS}}
           
       # Setup and run your production job here
       - name: Run production job
